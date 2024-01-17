@@ -1,0 +1,2 @@
+# motivator
+motivator application (swift) 
