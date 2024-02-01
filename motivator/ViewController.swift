@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 
 private var dayCount: Int = 0
-private var hourCountTotal: Double = 0
+private var hourCountTotal: Float16 = 0
 private var lastDate: String = "18 January 2024"
 private var dateNow = Date()
 private let calendar = Calendar.current
@@ -40,26 +40,38 @@ class ViewController: UIViewController {
     
     @IBAction func startButtonDidPress(_ sender: Any) {
         timerUse = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerActionStart), userInfo: nil, repeats: true)
+        UIBrainBar.tintColor = UIColor.ypGreen
     }
     
     @objc func timerActionStart () {
         durationTimer += 1
+        UIProgressView.progress += 0.01
         timerLabel.text = "\(Int(durationTimer))"
         print(durationTimer)
          
     }
     
+    @IBOutlet weak var UIBrainBar: UIImageView!
+    
+    
+    
+    
     @IBAction func stopButtonDidPress(_ sender: Any) {
         timerUse.invalidate()
-        timerLabel.text = "Ты занимался \(Int(durationTimer)) секунд. Это \((durationTimer)/3600) часа!"
+        hourCountTotal += durationTimer/3600
+        timerLabel.text = "Сейчас ты занимался \(Int(durationTimer)) секунд. Всего \(hourCountTotal) часов!"
         
     }
     override func viewDidLoad() {
+        UIProgressView.progress = 0.0
+        UIBrainBar.tintColor = UIColor.ypBackground
         super.viewDidLoad()
-        imageView.image = UIImage.brainUi
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var UIProgressView: UIProgressView!
+    
+    
     @IBAction private func touchButtonStart(_ sender: UIButton) {
         dateFormatter.dateFormat = "dd MMMM yyyy"
         convertedDate = dateFormatter.string(from: dateNow)
@@ -70,7 +82,7 @@ class ViewController: UIViewController {
             dayCount += 1
             print("You study for :\(dayCount) days in a row!")
         }
-        
+       durationTimer = 0
        print("convertedDate:\(convertedDate)")
        print("lastDate:\(lastDate)")
        print("dayCount:\(dayCount)")
