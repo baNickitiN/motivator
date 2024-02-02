@@ -77,19 +77,16 @@
                                 <color key="textColor" name="YPGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="brain.head.profile" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ztk-dw-azQ" userLabel="UIBrainBar">
-                                <rect key="frame" x="80" y="263.33333333333331" width="270" height="283.99999999999994"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" trackImage="brain" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t8E-S5-T2g">
+                                <rect key="frame" x="102" y="437" width="226" height="20"/>
                                 <color key="tintColor" name="YPGreen"/>
-                            </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" trackImage="brain" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t8E-S5-T2g">
-                                <rect key="frame" x="102" y="641" width="226" height="20"/>
-                                <color key="tintColor" name="YPGreen"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="HP8-l4-7XJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="HP8-l4-7XJ"/>
                                 </constraints>
                                 <color key="progressTintColor" name="YPGreen"/>
                                 <color key="trackTintColor" name="YP Background"/>
-                                <imageReference key="progressImage" image="brain" catalog="system" renderingMode="hierarchical-single">
+                                <imageReference key="progressImage" image="brain" catalog="system" renderingMode="hierarchical-single" variableValue="5.5511151231257827e-17">
                                     <hierarchicalColors>
                                         <color systemColor="labelColor"/>
                                         <color systemColor="secondaryLabelColor"/>
@@ -102,6 +99,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </progressView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="brain.head.profile" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ztk-dw-azQ" userLabel="UIBrainBar">
+                                <rect key="frame" x="80" y="263.33333333333331" width="270" height="283.99999999999994"/>
+                                <color key="tintColor" name="YPGreen"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Background"/>
@@ -117,7 +118,7 @@
                             <constraint firstItem="hpg-um-hbE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hey-6K-rdz"/>
                             <constraint firstItem="vQv-jL-IoT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i43-PA-Hfd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6aN-mf-nJe" secondAttribute="trailing" constant="20" id="jci-Sr-cSe"/>
-                            <constraint firstItem="t8E-S5-T2g" firstAttribute="top" secondItem="ztk-dw-azQ" secondAttribute="bottom" constant="94.666666666666742" id="kf8-ou-IYs"/>
+                            <constraint firstItem="t8E-S5-T2g" firstAttribute="top" secondItem="ztk-dw-azQ" secondAttribute="bottom" constant="-109.33333333333326" id="kf8-ou-IYs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6aN-mf-nJe" secondAttribute="bottom" id="qYu-Ts-7qc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ztk-dw-azQ" secondAttribute="trailing" constant="80" id="sqB-mf-5Nq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hpg-um-hbE" secondAttribute="trailing" constant="20" id="sub-28-y8h"/>
@@ -141,10 +142,10 @@
         <image name="brain" catalog="system" width="128" height="107"/>
         <image name="brain.head.profile" catalog="system" width="120" height="128"/>
         <namedColor name="YP Background">
-            <color red="0.9859262920380959" green="1" blue="0.9512045656818523" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.98600000143051147" green="1" blue="0.95099997520446777" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="YPGreen">
-            <color red="0.67396172860950099" green="0.88200002908706665" blue="0.35123743972031168" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.67400002479553223" green="0.88200002908706665" blue="0.35100001096725464" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
