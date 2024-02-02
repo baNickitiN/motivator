@@ -64,7 +64,9 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         UIProgressView.progress = 0.0
-        UIBrainBar.tintColor = UIColor.ypBackground
+        UIBrainBar.tintColor = UIColor.clear
+        UIProgressView.transform = CGAffineTransform(rotationAngle: CGFloat.pi / -2)
+        UIProgressView.tintColor = UIColor.clear
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
