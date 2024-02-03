@@ -65,25 +65,16 @@
                                     <constraint firstItem="0bl-Yl-Krj" firstAttribute="height" secondItem="8mG-ax-JWL" secondAttribute="height" id="xPL-O3-wC2"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="expansion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQv-jL-IoT">
-                                <rect key="frame" x="20" y="79" width="390" height="33.666666666666657"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <color key="textColor" name="YPGreen"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpg-um-hbE">
                                 <rect key="frame" x="20" y="764.33333333333337" width="390" height="33.666666666666629"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" name="YPGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" trackImage="brain" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t8E-S5-T2g">
-                                <rect key="frame" x="102" y="437" width="226" height="20"/>
+                            <progressView opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" trackImage="brain" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t8E-S5-T2g">
+                                <rect key="frame" x="100" y="309" width="230" height="239"/>
                                 <color key="tintColor" name="YPGreen"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="HP8-l4-7XJ"/>
-                                </constraints>
                                 <color key="progressTintColor" name="YPGreen"/>
                                 <color key="trackTintColor" name="YP Background"/>
                                 <imageReference key="progressImage" image="brain" catalog="system" renderingMode="hierarchical-single" variableValue="5.5511151231257827e-17">
@@ -99,38 +90,43 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </progressView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="brain.head.profile" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ztk-dw-azQ" userLabel="UIBrainBar">
-                                <rect key="frame" x="80" y="263.33333333333331" width="270" height="283.99999999999994"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="brain.head.profile.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XBo-Jj-BC6">
+                                <rect key="frame" x="96" y="308.33333333333326" width="234" height="223"/>
                                 <color key="tintColor" name="YPGreen"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Jg8-up-962"/>
+                                    <constraint firstAttribute="width" constant="250" id="pGM-u9-3Ky"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="125"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Background"/>
                         <constraints>
-                            <constraint firstItem="ztk-dw-azQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="3ZC-U5-q5g"/>
-                            <constraint firstItem="ztk-dw-azQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="204.99999999999994" id="5g6-SX-OiW"/>
-                            <constraint firstItem="t8E-S5-T2g" firstAttribute="centerX" secondItem="hpg-um-hbE" secondAttribute="centerX" id="6By-Ws-RUr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ztk-dw-azQ" secondAttribute="bottom" constant="351.66666666666674" id="9gj-NW-iAm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vQv-jL-IoT" secondAttribute="trailing" constant="20" id="D9x-qm-ijC"/>
-                            <constraint firstItem="vQv-jL-IoT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="RDJ-F2-9ZO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="t8E-S5-T2g" secondAttribute="bottom" constant="350" id="2Mr-mT-5Us"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t8E-S5-T2g" secondAttribute="trailing" constant="100" id="6pc-vS-0vb"/>
+                            <constraint firstItem="t8E-S5-T2g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Tgc-1f-jg8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hpg-um-hbE" secondAttribute="bottom" constant="100" id="TsP-kP-iJ7"/>
                             <constraint firstItem="6aN-mf-nJe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Uxd-ln-wft"/>
                             <constraint firstItem="hpg-um-hbE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hey-6K-rdz"/>
-                            <constraint firstItem="vQv-jL-IoT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i43-PA-Hfd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6aN-mf-nJe" secondAttribute="trailing" constant="20" id="jci-Sr-cSe"/>
-                            <constraint firstItem="t8E-S5-T2g" firstAttribute="top" secondItem="ztk-dw-azQ" secondAttribute="bottom" constant="-109.33333333333326" id="kf8-ou-IYs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6aN-mf-nJe" secondAttribute="bottom" id="qYu-Ts-7qc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ztk-dw-azQ" secondAttribute="trailing" constant="80" id="sqB-mf-5Nq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hpg-um-hbE" secondAttribute="trailing" constant="20" id="sub-28-y8h"/>
-                            <constraint firstItem="t8E-S5-T2g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="102" id="wUS-vu-DMA"/>
+                            <constraint firstItem="XBo-Jj-BC6" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="tkE-jS-JZC"/>
+                            <constraint firstItem="t8E-S5-T2g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="vKN-dP-Zia"/>
+                            <constraint firstItem="XBo-Jj-BC6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vSu-K1-2ij"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="UIBrainBar" destination="ztk-dw-azQ" id="DbK-6b-QS2"/>
                         <outlet property="UIProgressView" destination="t8E-S5-T2g" id="nFk-JY-Whg"/>
                         <outlet property="startButton" destination="0bl-Yl-Krj" id="m9V-md-18T"/>
                         <outlet property="stopButton" destination="8mG-ax-JWL" id="CT4-tK-t5N"/>
                         <outlet property="timerLabel" destination="hpg-um-hbE" id="mFT-CL-ke0"/>
+                        <outlet property="uiBrainView" destination="XBo-Jj-BC6" id="2lv-pa-ip3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -140,21 +136,21 @@
     </scenes>
     <resources>
         <image name="brain" catalog="system" width="128" height="107"/>
-        <image name="brain.head.profile" catalog="system" width="120" height="128"/>
+        <image name="brain.head.profile.fill" catalog="system" width="120" height="128"/>
         <namedColor name="YP Background">
-            <color red="0.98600000143051147" green="1" blue="0.95099997520446777" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.98431372549019602" green="1" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="YPGreen">
-            <color red="0.67400002479553223" green="0.88200002908706665" blue="0.35100001096725464" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.67500001192092896" green="0.88200002908706665" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
