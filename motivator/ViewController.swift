@@ -19,64 +19,68 @@ private let yearNow = calendar.component(.year, from: dateNow)
 private let hourNow = calendar.component(.hour, from: dateNow)
 private let minuteNow = calendar.component(.minute, from: dateNow)
 private let secondNow = calendar.component(.second, from: dateNow)
-var dateFormatter = DateFormatter()
-var convertedDate: String = "0"
-var durationTimer: Float16 = 0
+private var dateFormatter = DateFormatter()
+private var convertedDate: String = "0"
+private var durationTimer: Float16 = 0
+
 
 class ViewController: UIViewController {
     
+
     
-    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet private weak var imageView: UIImageView!
     
     
-    var timerUse =  Timer()
+    private var timerUse =  Timer()
    
 
-    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet private weak var timerLabel: UILabel!
     
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet private weak var startButton: UIButton!
     
-    @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet private weak var stopButton: UIButton!
     
-    @IBAction func startButtonDidPress(_ sender: Any) {
+    @IBOutlet weak var uiBrainView: UIImageView!
+    
+    @IBAction private func startButtonDidPress(_ sender: Any) {
         timerUse = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerActionStart), userInfo: nil, repeats: true)
-        UIBrainBar.tintColor = UIColor.ypGreen
-    }
+        }
     
-    @objc func timerActionStart () {
+    @objc private func timerActionStart () {
         durationTimer += 1
-        UIProgressView.progress += 0.01
+        UIProgressView.progress += 0.1
         timerLabel.text = "\(Int(durationTimer))"
         print(durationTimer)
          
     }
     
-    @IBOutlet weak var UIBrainBar: UIImageView!
+    @IBOutlet private weak var UIBrainBar: UIImageView!
     
-    
-    
-    
-    @IBAction func stopButtonDidPress(_ sender: Any) {
-        timerUse.invalidate()
-        hourCountTotal += durationTimer/3600
-        timerLabel.text = "Сейчас ты занимался \(Int(durationTimer)) секунд. Всего \(hourCountTotal) часов!"
-        
-    }
     override func viewDidLoad() {
         UIProgressView.progress = 0.0
-        UIBrainBar.tintColor = UIColor.clear
         UIProgressView.transform = CGAffineTransform(rotationAngle: CGFloat.pi / -2)
-        UIProgressView.tintColor = UIColor.clear
+        UIProgressView.tintColor = UIColor.ypBackground
+        uiBrainView.tintColor = UIColor.ypBackground
+        animation.fromValue = UIColor.red.cgColor
+        animation.toValue = UIColor.blue.cgColor
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    @IBOutlet weak var UIProgressView: UIProgressView!
+    @IBOutlet private weak var UIProgressView: UIProgressView!
     
+    
+    let animation = CABasicAnimation(keyPath: "backgroundColor")
     
     @IBAction private func touchButtonStart(_ sender: UIButton) {
+        uiBrainView.tintColor = UIColor.ypGreen
         dateFormatter.dateFormat = "dd MMMM yyyy"
         convertedDate = dateFormatter.string(from: dateNow)
+        animation.fromValue = UIColor.ypGreen.cgColor
+        animation.toValue = UIColor.ypBackground.cgColor
+        animation.duration = 10.0
+        uiBrainView.layer.add(animation, forKey: "backgroundColor")
         if convertedDate == lastDate {
             print("You study for :\(dayCount) days in a row!")
         }
@@ -88,6 +92,14 @@ class ViewController: UIViewController {
        print("convertedDate:\(convertedDate)")
        print("lastDate:\(lastDate)")
        print("dayCount:\(dayCount)")
+    }
+    
+    @IBAction private func stopButtonDidPress(_ sender: Any) {
+//        uiBrainView.tintColor = UIColor.ypBackground
+        timerUse.invalidate()
+        hourCountTotal += durationTimer/3600
+        timerLabel.text = "Сейчас ты занимался \(Int(durationTimer)) секунд. Всего \(hourCountTotal) часов!"
+        
     }
     
 }
