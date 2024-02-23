@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6aN-mf-nJe">
-                                <rect key="frame" x="20" y="838" width="390" height="60"/>
+                                <rect key="frame" x="20" y="779" width="390" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bl-Yl-Krj">
                                         <rect key="frame" x="0.0" y="0.0" width="189.33333333333334" height="60"/>
@@ -64,27 +64,56 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpg-um-hbE">
-                                <rect key="frame" x="20" y="764.33333333333337" width="390" height="33.666666666666629"/>
+                                <rect key="frame" x="20" y="705.33333333333337" width="390" height="33.666666666666629"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" name="YPGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="iJ3-HG-DBH">
+                                <rect key="frame" x="20" y="79" width="390" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwN-xm-qtA" userLabel="activityLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="1ko-Eh-fjr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <color key="textColor" name="YPGreen"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KS-d5-9uS" userLabel="totalTimeLabel">
+                                        <rect key="frame" x="171.66666666666663" y="0.0" width="218.33333333333337" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="eYl-uv-4v3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <color key="textColor" name="YPGreen"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Background"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iJ3-HG-DBH" secondAttribute="trailing" constant="20" id="McE-Od-AYZ"/>
+                            <constraint firstItem="iJ3-HG-DBH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OPo-Mt-aey"/>
+                            <constraint firstItem="iJ3-HG-DBH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="RFU-DA-Cca"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hpg-um-hbE" secondAttribute="bottom" constant="100" id="TsP-kP-iJ7"/>
                             <constraint firstItem="6aN-mf-nJe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Uxd-ln-wft"/>
                             <constraint firstItem="hpg-um-hbE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hey-6K-rdz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iJ3-HG-DBH" secondAttribute="bottom" constant="700" id="iEd-Pf-MCD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6aN-mf-nJe" secondAttribute="trailing" constant="20" id="jci-Sr-cSe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6aN-mf-nJe" secondAttribute="bottom" id="qYu-Ts-7qc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hpg-um-hbE" secondAttribute="trailing" constant="20" id="sub-28-y8h"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityLabel" destination="HwN-xm-qtA" id="qin-mS-W7J"/>
                         <outlet property="startButton" destination="0bl-Yl-Krj" id="m9V-md-18T"/>
                         <outlet property="stopButton" destination="8mG-ax-JWL" id="CT4-tK-t5N"/>
                         <outlet property="timerLabel" destination="hpg-um-hbE" id="mFT-CL-ke0"/>
+                        <outlet property="totalTimeLabel" destination="9KS-d5-9uS" id="fRE-lw-Q99"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
